@@ -1,0 +1,27 @@
+/* ✅ Style général du footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a2e;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  /* ✅ Liens du footer */
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  

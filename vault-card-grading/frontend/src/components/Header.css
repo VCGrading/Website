@@ -1,0 +1,54 @@
+/* ✅ Style général du header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1a1a2e;
+    color: white;
+  }
+  
+  /* ✅ Style du logo */
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  
+  /* ✅ Barre de navigation */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* ✅ Bouton de déconnexion */
+  .logout-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .logout-btn:hover {
+    background: darkred;
+  }
+  

@@ -1,0 +1,290 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  header {
+    background-color: #111;
+    padding: 15px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: gold;
+  }
+  
+  footer {
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input, select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkgoldenrod;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+  }
+  
+  .account-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-info {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .order-card {
+    background: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-card h3 {
+    margin-bottom: 5px;
+  }
+  
+  .order-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .order-item {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* ✅ Style général du Checkout */
+.checkout-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Style du résumé de commande */
+.checkout-summary {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* ✅ Style des articles listés */
+.checkout-item {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* ✅ Titres centrés uniquement pour la page Checkout */
+.checkout-container h1, 
+.checkout-container h2, 
+.checkout-container h3 {
+  text-align: center;
+}
+
+/* ✅ Style spécifique des boutons Checkout */
+.checkout-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.checkout-container button:hover {
+  background: #0056b3;
+}
+
+/* ✅ Style général du panier */
+.cart-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Liste des articles du panier */
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* ✅ Chaque article dans le panier */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Infos des articles */
+.cart-info {
+  flex: 1;
+}
+
+/* ✅ Bouton de suppression */
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.remove-btn:hover {
+  background: darkred;
+}
+
+/* ✅ Total du panier */
+.cart-total {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* ✅ Bouton de checkout */
+.checkout-btn {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #0056b3;
+}
