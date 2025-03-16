@@ -6,6 +6,7 @@
     padding: 15px 30px;
     background: #1a1a2e;
     color: white;
+    height: 70px;
   }
   
   /* ✅ Style du logo */
@@ -21,6 +22,7 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    align-items: center;
   }
   
   .nav-links li {
@@ -43,12 +45,26 @@
     background: red;
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 10px 15px; /* ✅ Équilibrer l'espacement */
     cursor: pointer;
     border-radius: 5px;
-  }
+    
+    display: flex; /* ✅ Utilisation de flexbox */
+    align-items: center; /* ✅ Centre verticalement le texte et l'icône */
+    justify-content: center; /* ✅ Centre le contenu horizontalement */
+    margin-top: 0px ;
+    font-size: 16px;
+    height: 40px; /* ✅ Assurer une hauteur uniforme */
+    line-height: normal;
+}
   
   .logout-btn:hover {
     background: darkred;
+  }
+  
+  .nav-item-email {
+    font-size: 0.80em; /* ✅ Réduit la taille du texte */
+    font-weight: normal; /* ✅ Optionnel : éviter que ça soit trop gras */
+    color: #ccc; /* ✅ Optionnel : ajuster la couleur pour une meilleure lisibilité */
   }
   

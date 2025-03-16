@@ -12,6 +12,9 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
 import PublicRoute from "./components/PublicRoute";
+import ResetPassword from "./pages/ResetPassword";
+import VerifyEmail from "./pages/VerifyEmail"; //
+import SetPassword from "./pages/SetPassword"; //
 
 function App() {
   return (
@@ -27,9 +30,10 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
-          
-          
-        </Routes>
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/verify-email/:token" element={<VerifyEmail />} />
+          <Route path="/set-password/:token" element={<SetPassword />} />
+         </Routes>
       </div>
       <Footer />
     </Router>

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "./Order.css"; // ✅ Style spécifique
+import { FaShieldAlt } from "react-icons/fa";
 
 function Order() {
   const { addToCart } = useContext(CartContext);
@@ -54,7 +55,7 @@ function Order() {
 
   return (
     <div className="order-container">
-      <h1>📦 Commande de grading</h1>
+      <h1><FaShieldAlt /> Certifier mes cartes</h1>
       <form onSubmit={handleSubmit} className="order-form">
         <label>Nom de la carte :</label>
         <input type="text" name="name" value={card.name} onChange={handleChange} required />
@@ -72,7 +73,6 @@ function Order() {
         <label>Numéro de série :</label>
         <input type="text" name="serialNumber" value={card.serialNumber} onChange={handleChange} required />
 
-        <label>Note minimale souhaitée :</label>
         <label>Note minimale souhaitée :</label>
 <select name="minGrade" value={card.minGrade} onChange={handleChange}>
   <option value="10">10</option>

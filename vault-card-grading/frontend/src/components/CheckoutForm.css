@@ -1,0 +1,64 @@
+.checkout-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .step {
+    padding: 10px;
+    background: #ccc;
+    border-radius: 5px;
+    flex: 1;
+    text-align: center;
+    margin: 0 5px;
+    font-weight: bold;
+  }
+  
+  .step.active {
+    background: #007bff;
+    color: white;
+  }
+  
+  .confirmation {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .checkout-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  button[type="button"] {
+    background: #ddd;
+    color: black;
+  }
+  
+  button[type="submit"] {
+    background: #007bff;
+    color: white;
+  }
+  

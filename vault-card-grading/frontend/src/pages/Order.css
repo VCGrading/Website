@@ -8,6 +8,15 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
+  .order-container h1 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* ✅ Ajoute un espace entre l’icône et le texte */
+}
+
+  
   /* ✅ Formulaire */
   .order-form {
     display: flex;

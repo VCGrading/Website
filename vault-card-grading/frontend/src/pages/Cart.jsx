@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
 function Cart() {
   const { cart, removeFromCart } = useContext(CartContext);
@@ -23,7 +24,7 @@ function Cart() {
 
   return (
     <div className="cart-container">
-      <h1>🛒 Votre Panier</h1>
+      <h1><FaShoppingCart /> Votre Panier</h1>
 
       {cart.length === 0 ? (
         <p>Votre panier est vide.</p>
