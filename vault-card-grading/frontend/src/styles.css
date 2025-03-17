@@ -375,3 +375,9 @@ button:hover {
   position: relative;
   top: -2px;
 }
+
+.logo {
+  height: 40px; /* Ajuste la taille */
+  width: auto; /* Garde les proportions */
+  display: block;
+}

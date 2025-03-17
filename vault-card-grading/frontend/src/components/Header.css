@@ -62,9 +62,8 @@
     background: darkred;
   }
   
-  .nav-item-email {
-    font-size: 0.80em; /* ✅ Réduit la taille du texte */
-    font-weight: normal; /* ✅ Optionnel : éviter que ça soit trop gras */
-    color: #ccc; /* ✅ Optionnel : ajuster la couleur pour une meilleure lisibilité */
+  .nav-item-account {
+    font-size: 0.94em; /* ✅ Réduit la taille du texte */
+    margin-right: 10px;
   }
   

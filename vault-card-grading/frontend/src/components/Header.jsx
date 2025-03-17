@@ -10,7 +10,9 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">Vault Card Grading</Link>
+      <Link to="/">
+      <img src="/assets/logo.svg" alt="Vault Card Grading" className="logo" />
+        </Link>
       </div>
 
       <nav>
@@ -23,15 +25,15 @@ function Header() {
             <>
               <li>
     <Link to="/account">
-      <FaUser className="fa-icon-mail"/> <span className="nav-item-email">{user.email}</span>
+      <FaUser className="fa-icon-mail"/> <span className="nav-item-account">MON COMPTE</span>
     </Link>
   </li>
               <li><button onClick={logout} className="logout-btn"><FaSignOutAlt className="fa-icon-logout" /> Déconnexion</button></li>
             </>
           ) : (
             <>
-              <li><Link to="/login"><FaKey /> Connexion</Link></li>
-              <li><Link to="/register"><FaUserPlus /> Créer un compte</Link></li>
+              <li><Link to="/login"><FaKey className="fa-icon"/> Connexion</Link></li>
+              <li><Link to="/register"><FaUserPlus className="fa-icon"/> Créer un compte</Link></li>
             </>
           )}
         </ul>

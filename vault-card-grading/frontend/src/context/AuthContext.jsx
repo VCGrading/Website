@@ -4,13 +4,14 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [csrfToken, setCsrfToken] = useState(""); // ✅ Stockage du token CSRF
+  const [csrfToken, setCsrfToken] = useState("");
+  const [loading, setLoading] = useState(true);
 
   // ✅ Récupération du token CSRF dès le chargement de l'app
   const fetchCsrfToken = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/csrf-token", {
-        credentials: "include", // ✅ Indique au navigateur d'inclure les cookies
+        credentials: "include",
       });
       const data = await response.json();
       if (response.ok) setCsrfToken(data.csrfToken);
@@ -19,40 +20,45 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ Récupérer l'utilisateur automatiquement depuis le backend via le cookie
+  // ✅ Récupération de l'utilisateur
   const fetchUser = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/auth/me", {
-        credentials: "include", // ✅ Envoie les cookies pour récupérer l'utilisateur
+        credentials: "include",
       });
       const data = await response.json();
       if (response.ok) setUser(data);
     } catch (error) {
-      console.error("Erreur de récupération de l'utilisateur :", error);
+      console.error("Erreur récupération de l'utilisateur :", error);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchCsrfToken(); // ✅ Récupère le token CSRF au lancement
-    fetchUser(); // ✅ Vérifie l'utilisateur au lancement
+    fetchCsrfToken();
+    fetchUser();
   }, []);
 
-  // ✅ Connexion - envoie les identifiants avec le token CSRF
+  // ✅ Connexion
   const login = async (email, password) => {
+    await fetchCsrfToken();
+    if (!csrfToken) return false;
+
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-CSRF-Token": csrfToken, // 🔥 Ajout du token CSRF
+          "X-CSRF-Token": csrfToken,
         },
         body: JSON.stringify({ email, password }),
-        credentials: "include", // ✅ Stocke le token en cookie sécurisé
+        credentials: "include",
       });
 
-      const data = await response.json();
       if (response.ok) {
-        fetchUser(); // ✅ On récupère l'utilisateur après connexion
+        fetchUser();
+        fetchCsrfToken();
         return true;
       } else {
         return false;
@@ -63,24 +69,29 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // ✅ Déconnexion - supprime le cookie du backend et envoie le token CSRF
+  // ✅ Déconnexion
   const logout = async () => {
+    await fetchCsrfToken();
+    if (!csrfToken) return;
+
     try {
-      await fetch("http://localhost:5000/api/auth/logout", {
+      const response = await fetch("http://localhost:5000/api/auth/logout", {
         method: "POST",
-        headers: {
-          "X-CSRF-Token": csrfToken, // 🔥 Ajout du token CSRF
-        },
+        headers: { "X-CSRF-Token": csrfToken },
         credentials: "include",
       });
-      setUser(null);
+
+      if (response.ok) {
+        setUser(null);
+        fetchCsrfToken();
+      }
     } catch (error) {
       console.error("Erreur de déconnexion :", error);
     }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, csrfToken }}>
+    <AuthContext.Provider value={{ user, login, logout, loading }}>
       {children}
     </AuthContext.Provider>
   );

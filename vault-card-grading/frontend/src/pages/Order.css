@@ -1,63 +1,74 @@
-/* ✅ Style global de la page */
+/* ✅ Structure de la page */
 .order-container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .order-container h1 {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* ✅ Ajoute un espace entre l’icône et le texte */
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-  
-  /* ✅ Formulaire */
-  .order-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .order-form label {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .order-form input,
-  .order-form select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* ✅ Checkbox assurance */
-  .insurance-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  /* ✅ Bouton d'ajout */
-  button {
-    margin-top: 15px;
-    padding: 10px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
+/* ✅ Flexbox pour aligner le formulaire et l'aperçu du panier */
+.order-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* ✅ Taille du formulaire */
+.order-form-container {
+  flex: 2; /* Formulaire plus large */
+}
+
+/* ✅ Style du titre */
+.order-container h1 {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ✅ Formulaire */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.order-form input,
+.order-form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ✅ Checkbox assurance */
+.insurance-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ✅ Bouton d'ajout */
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
